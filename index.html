@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+
+    
+    
+    
+    
+    <script>
+        
+       
+        function myFunction(clickedButton) {
+            var display = document.getElementById("result");
+            var warning = document.getElementById("warning");
+            var warning1 = document.getElementById("warning1");
+
+
+            var displayValue = display.innerHTML;
+            var input2;
+        if(display.innerHTML.length<18)    
+{
+
+    if(displayValue.startsWith("_"))
+        {
+            display.innerHTML="";
+            
+        }
+       
+     if(clickedButton.id >=1) {
+        if(displayValue.startsWith(0) && !displayValue.includes(".") )
+        {
+            display.innerHTML="";
+            warning.innerHTML="";
+            display.innerHTML+=clickedButton.value;
+        }
+        else{
+            display.innerHTML+=clickedButton.value;
+        }
+     }
+
+     if(clickedButton.id == "num0") {
+        if(displayValue.startsWith(0) && !displayValue.includes("."))
+        {
+            warning.innerHTML="Adding zeros at the beginning doesn't change anything!"
+            
+        }
+        else{
+        display.innerHTML+=clickedButton.value;
+        }
+     }
+
+    }
+      if(clickedButton.id === "C") {
+        display.innerHTML = "_";
+        warning.innerHTML="";
+        warning1.innerHTML="";
+      }
+
+      if (clickedButton.id === '#') {
+
+        if (displayValue.length > 1) {
+
+            if (displayValue.startsWith('_')) {
+
+            display.innerHTML = display.innerHTML.slice(0, -1);
+            }
+             else {
+            display.innerHTML = display.innerHTML.slice(0, -1) 
+            }
+
+        } 
+        else {
+            display.innerHTML = '_';
+        }
+        }
+
+      if(clickedButton.id === "+")
+      {
+
+        if(displayValue.startsWith("_"))
+        {
+            display.innerHTML = "_";
+        }
+
+        else
+        {
+            warning1.innerHTML=display.innerHTML;
+            warning.innerHTML="+";
+            display.innerHTML = "_";
+        }
+      }
+      if(clickedButton.id === "-")
+      {
+
+        if(displayValue.startsWith("_"))
+        {
+            display.innerHTML = "_";
+        }
+
+        else
+        {
+            warning1.innerHTML=display.innerHTML;
+            warning.innerHTML="-";
+            display.innerHTML = "_";
+        }
+
+      }
+
+      if(clickedButton.id === "/")
+      {
+
+        if(displayValue.startsWith("_"))
+        {
+            
+            display.innerHTML = "_";
+        }
+
+        else
+        {
+            warning1.innerHTML=display.innerHTML;
+            warning.innerHTML="/";
+            display.innerHTML = "_";
+        }
+
+      }
+
+      if(clickedButton.id === "*")
+      {
+       
+        if(displayValue.startsWith("_"))
+        {
+            
+            display.innerHTML = "_";
+        }
+        else
+        {
+            warning1.innerHTML=display.innerHTML;
+            warning.innerHTML="*";
+            display.innerHTML = "_";
+        }
+        
+
+      }
+
+
+
+      if(clickedButton.id =="=") { 
+    
+            if(warning.innerHTML=="+")
+            {   
+                var num1 = parseFloat(warning1.innerHTML);
+                var num2 = parseFloat(display.innerHTML);
+                warning.innerHTML="";
+                display.innerHTML = num1+num2;
+                warning1.innerHTML="";
+            }
+            
+            if(warning.innerHTML=="-")
+            {   
+                var num1 = parseFloat(warning1.innerHTML);
+                var num2 = parseFloat(display.innerHTML);
+                warning.innerHTML="";
+                display.innerHTML = num1-num2;
+                warning1.innerHTML="";
+            }
+
+            if(warning.innerHTML=="*")
+            {   
+                var num1 = parseFloat(warning1.innerHTML);
+                var num2 = parseFloat(display.innerHTML);
+                warning.innerHTML="";
+                display.innerHTML = num1*num2;
+                warning1.innerHTML="";
+            }
+
+            if(warning.innerHTML=="/")
+            {   
+                var num1 = parseFloat(warning1.innerHTML);
+                var num2 = parseFloat(display.innerHTML);
+                if(num2==0)
+                {
+                    warning1.innerHTML="Can't divide by 0";
+                    warning.innerHTML="";
+                    display.innerHTML="_";
+                }
+                else{
+                warning.innerHTML="";
+                display.innerHTML = num1/num2;
+                warning1.innerHTML="";
+                }
+            }
+
+            if(display.innerHTML.length>=18)
+            {
+                var ending = display.innerHTML;
+                display.innerHTML = ending.toFixed(15);
+                
+             } 
+        
+
+     }
+     if(clickedButton.id === "dot")
+      {
+        if(displayValue.startsWith("_"))
+        {
+            
+            display.innerHTML = "0.";
+        }
+        else
+        {
+          if(!displayValue.includes("."))
+            display.innerHTML += "."; 
+        }
+      }
+     
+    }
+     </script>
+    
+</head>
+
+<body>
+ <div class = "main">
+    <div class="calculator-screen-border">
+    <div>
+        <h2 id="warning1"></h2>
+        <h2 id="warning"></h2>
+        
+        <h1 class="calculator-screen" id="result" value="0">_</h1>
+    </div>
+</div>
+    <div>
+    <button class="buttonC" onclick="myFunction(this)"  id="C">C</button>
+    <button class="buttonopp" onclick="myFunction(this)" id="#" >&larr;</button>
+    <button class="buttonopp" onclick="myFunction(this)"  id="dot">.</button>
+    <button class="buttonopp" onclick="myFunction(this)" id="/">/</button>
+    </div>
+    <div>
+    <button class="buttonnumbers" onclick="myFunction(this)" value="7" id="7">7</button>
+    <button class="buttonnumbers" onclick="myFunction(this)"  value="8" id="8">8</button>
+    <button class="buttonnumbers" onclick="myFunction(this)" value="9" id="9">9</button>
+    <button class="buttonopp" onclick="myFunction(this)" id="*">*</button>
+    </div>
+    <div>
+    <button class="buttonnumbers" onclick="myFunction(this)"value="4" id="4">4</button>
+    <button class="buttonnumbers" onclick="myFunction(this)"value="5" id="5">5</button>
+    <button class="buttonnumbers" onclick="myFunction(this)" value="6" id="6">6</button>
+    <button class="buttonopp" onclick="myFunction(this)" id="-">-</button>
+    </div>
+    <div>
+    <button class="buttonnumbers" onclick="myFunction(this)" value="1" id="1">1</button>
+    <button class="buttonnumbers" onclick="myFunction(this)" value="2" id="2">2</button>
+    <button class="buttonnumbers" onclick="myFunction(this)" value="3" id="3">3</button>
+    <button class="buttonopp" onclick="myFunction(this)" id="+">+</button>
+    </div>
+   <div>
+    <button class="buttonnumber0" onclick="myFunction(this)" value="0" id="num0">0</button>
+    <button class="buttonopp" onclick="myFunction(this)" id="=">=</button>
+    </div>
+ </div>
+
+
+</body>
+</html>

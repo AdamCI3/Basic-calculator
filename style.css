@@ -1,0 +1,187 @@
+body
+{
+    display: flex;
+    flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+ 
+  background-color: #73c8a9;
+  background-image: linear-gradient(to right,#73c8a9,#373b44 );
+}
+
+.calculator-screen {
+    display: flex;
+    font-size: 60px;
+    height: 150px;
+    border: 3px inset #565351;
+    border-top: 0px;
+    border-bottom: 0px;
+    background-color: #252525;
+    color: #fff;
+    text-align: right;
+    justify-content: right;
+    align-items: center;
+    padding-right: 5px;
+    padding-left: 5px;
+    
+    
+  }
+  .calculator-screen-border
+  {
+    background-color: #565351;
+    padding: 0%;
+    border:3px solid #565351;
+  }
+
+  .main
+   {
+    border: 5px solid #565351;
+    justify-content: center;
+    align-items: center;
+    background-color: #252525;
+    border-radius: 5px;
+    position: absolute;
+    
+  }
+
+  .main h1
+  {
+    margin: 0;
+  }
+  .main h2
+  {
+    background-color: #252525;
+    color: #fff;
+    margin: 0;
+    border: 0;
+    border: 3px inset #565351;
+    border-bottom: 0px;
+    background-color: #252525;
+    font-size: medium;
+    
+  }
+  
+  .main div
+  {
+    margin-bottom: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .main button
+  {
+    font-size: 45px;
+    transition: 1s;
+   margin-left: 3px;
+   margin-right: 3px;
+  }
+
+  .buttonopp
+  {
+    height: 100px;
+    width: 150px;
+    top:50%;
+    background-color: orange;
+    color: #fff;
+    border-radius: 3px;
+    border: 8px solid #565351;
+    color: #333;
+  }
+
+  .buttonopp:hover
+  {
+    font-size: 45px;
+    border:8px inset #554943;
+    border-radius: 3px;
+    background-color: rgba(255, 197, 88, 0.952);
+  }
+
+  .buttonopp:active
+  {
+    font-size: 45px;
+    border:8px inset #362f2a;
+    border-radius: 3px;
+    background-color: rgba(255, 197, 88, 0.952);
+    transition: 0.1s;
+  }
+
+  .buttonC
+  {
+    height: 100px;
+    width: 150px;
+    background-color: orange;
+    border-radius: 3px;
+    border: 8px solid #565351;
+    color: #333;
+  }
+
+  .buttonC:hover
+  {
+    font-size: 45px;
+    border:8px inset #554943;
+    border-radius: 3px;
+    background-color: rgba(255, 197, 88, 0.952);
+  }
+
+  .buttonC:active
+  {
+    font-size: 45px;
+    border:8px inset #362f2a;
+    border-radius: 3px;
+    background-color: rgba(255, 197, 88, 0.952);
+    transition: 0.1s;
+  }
+
+  .buttonnumbers
+  {
+    height: 100px;
+    width: 150px;
+    background-color: #E2E2E2;
+    border-radius: 3px;
+    border: 8px solid #453F3C;
+    color: #333;
+  }
+
+  .buttonnumbers:hover
+  {
+    font-size: 45px;
+    border:8px inset #554943;
+    border-radius: 3px;
+    background-color: #bdbaba
+  }
+
+  .buttonnumbers:active
+  {
+    font-size: 45px;
+    border:8px inset #362f2a;
+    border-radius: 3px;
+    background-color: #bdbaba;
+    transition: 0.1s; 
+  }
+
+  .buttonnumber0
+  {
+    height: 100px;
+    width: 471px;
+    background-color: #E2E2E2;
+    border-radius: 3px;
+    border: 8px solid #453F3C;
+    color: #333;
+  }
+
+  .buttonnumber0:hover
+  {
+    font-size: 45px;
+    border:8px inset #554943;
+    border-radius: 3px;
+    background-color: #bdbaba
+  }
+
+  .buttonnumber0:active
+  {
+    font-size: 45px;
+    border:8px inset #362f2a;
+    border-radius: 3px;
+    background-color: #bdbaba;
+    transition: 0.01s;
+  }
